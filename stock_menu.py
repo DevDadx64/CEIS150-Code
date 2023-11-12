@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug 30 22:57:11 2021
+Created on Nov 12th 2023
 
-@author: D99003734
+@author: Miller Emion
 """
 from datetime import datetime
 from stock_class import Stock, DailyData
