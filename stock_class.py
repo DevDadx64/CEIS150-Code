@@ -3,10 +3,10 @@
 
 class Stock:
     # init class attributes
-    def __init__(self, name, symbol, share):
+    def __init__(self, symbol, name, shares):
         self.name = name
         self.symbol = symbol
-        self.share = share
+        self.share = shares
         self.DataList = []
     # Mehtod to append stockData to DataList
     def addData(self, stockData):
