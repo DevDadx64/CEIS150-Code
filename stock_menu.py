@@ -12,20 +12,80 @@ import csv
 
 
 def add_stock(stock_list):
-      print("This method is under construction")
+     option = ""
+     while option != "0":
+         print("Add Stock")
+         symbol = input("Enter Stock Symbol: ").upper().strip()
+         name = input("Enter Stock Name: ")
+         shares = float(input("Enter Number of Shares: "))
+         new_stock = Stock(symbol,name,shares)
+         stock_list.append(new_stock)
+         option = input("Press Enter to add another stock or 0 to stop: ")         
+
 
 # Remove stock and all daily data
 def delete_stock(stock_list):
-    print("This method is under construction")
-    
+    print("Delete Stock")
+    print(stock_list)
+    for stock in stock_list:
+        print(stock.symbol + '')
+    print(']')
+    symbol = input("Enter Stock Symbol: ").upper().strip()
+    found = False
+    i = 0
+    for stock in stock_list:
+        if stock.symbol == symbol:
+            found = True
+            stock_list.pop(i)
+        i += 1
+        if found == True:
+            print("Deleted" + symbol)
+        else:
+            print("Stock not found")
+        input("Press Enter to continue ***")
+
     
 # List stocks being tracked
 def list_stocks(stock_list):
-    print("This method is under construction")
+    print("Stocks being tracked")
+    print("{:<10s}{:<20s}{:<10s}".format("Symbol", "Name", "Shares"))
+    print("-" * 40)
+    for stock in stock_list:
+        print("{:<10s}{:<20s}{:<10.2f}".format(stock.symbol, stock.name, stock.share))
+    input("Press Enter to continue ***")
+
     
-    # Add Daily Stock Data
+# Add Daily Stock Data
 def add_stock_data(stock_list):
-   print("This method is under construction")
+    print("Add Daily Stock Data ----")
+    print("Stock List: [",end="")
+    for stock in stock_list:
+        print(stock.symbol," ",end="")
+    print("]")
+    symbol = input("Which stock do you want to use?: ").upper().strip()
+    found = False
+    for stock in stock_list:
+        if stock.symbol == symbol:
+            found = True
+            current_stock = stock
+            break
+    if found == True:
+        print("Ready to add data for: ",symbol)
+        print("Enter Data Separated by Commas - Do Not use Spaces")
+        print("Enter a Blank Line to Quit")
+        print("Enter Date,Price,Volume")
+        print("Example: 8/28/20,47.85,10550")
+        data = input("Enter Date,Price,Volume: ")
+        while data != "":
+            date, price, volume = data.split(",")
+            daily_data = DailyData(date,float(price),float(volume))
+            current_stock.addData(daily_data)
+            data = input("Enter Date,Price,Volume: ")
+            print("Date Entry Complete")
+    else:
+        print("Symbol Not Found ***")
+    _ = input("Press Enter to Continue ***")
+   
     
 def investment_type(stock_list):
     print("This method is under construction")
