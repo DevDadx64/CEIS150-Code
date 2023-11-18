@@ -14,10 +14,10 @@ class Retirement_Account:
 class Traditional(Retirement_Account):
     def __init__(self, balance, number):
         super().__init__(balance, number)
-        self.Stock_List = []
+        self.stock_list = []
 
     def add_stock(self, stock_data):
-        self.Stock_List.append(stock_data)
+        self.stock_list.append(stock_data)
 
 # Create the Robo Class
 class Robo(Retirement_Account):

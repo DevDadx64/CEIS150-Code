@@ -6,7 +6,7 @@ class Stock:
     def __init__(self, symbol, name, shares):
         self.name = name
         self.symbol = symbol
-        self.share = shares
+        self.shares = shares
         self.DataList = []
     # Mehtod to append stockData to DataList
     def addData(self, stockData):
