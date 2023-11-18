@@ -51,7 +51,7 @@ def list_stocks(stock_list):
     print("{:<10s}{:<20s}{:<10s}".format("Symbol", "Name", "Shares"))
     print("-" * 40)
     for stock in stock_list:
-        print("{:<10s}{:<20s}{:<10.2f}".format(stock.symbol, stock.name, stock.share))
+        print("{:<10s}{:<20s}{:<10.2f}".format(stock.symbol, stock.name, stock.shares))
     input("Press Enter to continue ***")
 
     
