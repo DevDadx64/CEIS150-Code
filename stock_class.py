@@ -1,6 +1,6 @@
 # Author: Miller Emion
 # Date: 2023-11-03
-
+# Assignment: stock_class.py
 class Stock:
     # init class attributes
     def __init__(self, symbol, name, shares):
