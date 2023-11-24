@@ -125,11 +125,40 @@ def investment_type(stock_list):
 
 # Function to create stock chart
 def display_stock_chart(stock_list,symbol):
-    print("This method is under construction")
+    date = []
+    price = []
+    volume = []
+    company  = ""
+    for stock in stock_list:
+        if stock.symbol == symbol:
+            company = stock.name
+            for daily_data in stock.DataList:
+                date.append(daily_data.date)
+                price.append(daily_data.close)
+                volume.append(daily_data.volume)
+    plt.plot(date,price)
+    plt.xlabel("Date")
+    plt.ylabel("Price")
+    plt.title(company)
+    plt.show()
 
 # Display Chart
 def display_chart(stock_list):
-    print("This method is under construction")
+    print("Stock List: [")
+    for stock in stock_list:
+        print(stock.symbol + " ")
+    print("]")
+    symbol = input("Which stock do you want to chart: ").upper().strip()
+    found = False
+    for stock in stock_list:
+        if stock.symbol == symbol:
+            found = True
+            current_stock = stock
+    if found == True:
+        display_stock_chart(stock_list,symbol)
+    else:
+        print("Symbol Not Found ***")
+    _ = input("Press Enter to Continue ***")
   
 
 
