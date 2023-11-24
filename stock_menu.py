@@ -81,7 +81,7 @@ def add_stock_data(stock_list):
             daily_data = DailyData(date,float(price),float(volume))
             current_stock.addData(daily_data)
             data = input("Enter Date,Price,Volume: ")
-            print("Date Entry Complete")
+        print("Date Entry Complete")
     else:
         print("Symbol Not Found ***")
     _ = input("Press Enter to Continue ***")
@@ -155,10 +155,10 @@ def display_chart(stock_list):
             found = True
             current_stock = stock
     if found == True:
-        display_stock_chart(stock_list,symbol)
+        display_stock_chart(stock_list, current_stock.symbol)
     else:
         print("Symbol Not Found ***")
-    _ = input("Press Enter to Continue ***")
+    _ = input("Press Enter to Continue")
   
 
 
